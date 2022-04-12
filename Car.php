@@ -24,6 +24,9 @@ class Car
 
     public function start(): string
     {
+        if ($this->hasParkBrake === true) {
+            throw new Exception('Car can\'t start with park brake');
+        }
         return "I'm started";
     }
 
